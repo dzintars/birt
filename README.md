@@ -20,4 +20,4 @@ docker volume inspect birt
 
 docker run -d -p 9999:8080 birt
 
-docker run -d --name birt -v birt:/opt/tomcat/webapps/birt/reports birt:latest
+docker run -d -p 9999:8080 --name birt -v birt:/opt/tomcat/webapps/birt/reports birt:latest
