@@ -35,8 +35,6 @@ VOLUME /opt/tomcat/webapps/birt
 # Modify birt viewer setting for reports path issue
 RUN perl -i -p0e "s/BIRT_VIEWER_WORKING_FOLDER<\/param-name>\n\t\t<param-value>/BIRT_VIEWER_WORKING_FOLDER<\/param-name>\n\t\t<param-value>\/opt\/tomcat\/webapps\/birt\//smg" /opt/tomcat/webapps/birt/WEB-INF/web.xml
 
-# Enable TLS (HTTPS) - need to modify /opt/tomcat/webapps/birt/WEB-INF/viewer.properties and uncomment base_url variable. Change url to domain and port your Birt application will be accessible.
-
 #Start
 CMD /opt/tomcat/bin/catalina.sh run
 # CMD ["catalina.sh", "run"]
