@@ -7,7 +7,7 @@ RUN apt-get -y upgrade
 #Pre-Installation
 RUN apt -y install openjdk-8-jdk
 RUN apt -y install wget
-RUN wget "https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.14/bin/apache-tomcat-9.0.14.tar.gz" -P /opt/tomcat
+RUN wget "https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.41/bin/apache-tomcat-9.0.41.tar.gz" -P /opt/tomcat
 RUN tar xzvf /opt/tomcat/apache-tomcat-9*tar.gz -C /opt/tomcat --strip-components=1
 
 RUN apt -y install unzip
