@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 #Update
 RUN apt-get update
@@ -7,14 +7,14 @@ RUN apt-get -y upgrade
 #Pre-Installation
 RUN apt -y install openjdk-8-jdk
 RUN apt -y install wget
-RUN wget "https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.41/bin/apache-tomcat-9.0.41.tar.gz" -P /opt/tomcat
+RUN wget "https://downloads.apache.org/tomcat/tomcat-10/v10.0.8/bin/apache-tomcat-10.0.8.tar.gz" -P /opt/tomcat
 RUN tar xzvf /opt/tomcat/apache-tomcat-9*tar.gz -C /opt/tomcat --strip-components=1
 
 RUN apt -y install unzip
-RUN wget "http://download.eclipse.org/birt/downloads/drops/R-R1-4.8.0-201806261756/birt-runtime-4.8.0-20180626.zip" -P /opt/tomcat/webapps
-RUN unzip "/opt/tomcat/webapps/birt-runtime-4.8.0-20180626.zip" -d /opt/tomcat/webapps/birt-runtime
+RUN wget "http://download.eclipse.org/birt/downloads/drops/I-R1-4.9.0-201905231911/birt-runtime-4.9.0-20190523.zip" -P /opt/tomcat/webapps
+RUN unzip "/opt/tomcat/webapps/birt-runtime-4.9.0-20190523.zip" -d /opt/tomcat/webapps/birt-runtime
 RUN mv "/opt/tomcat/webapps/birt-runtime/WebViewerExample" "/opt/tomcat/webapps/birt"
-RUN rm /opt/tomcat/webapps/birt-runtime-4.8.0-20180626.zip
+RUN rm /opt/tomcat/webapps/birt-runtime-4.9.0-20190523.zip
 RUN rm -f -r "/opt/tomcat/webapps/birt-runtime"
 
 #RUN mkdir /usr/share/tomcat && mkdir /etc/tomcat
