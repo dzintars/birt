@@ -8,7 +8,7 @@ RUN apt-get -y upgrade
 RUN apt -y install openjdk-8-jdk
 RUN apt -y install wget
 RUN wget "https://downloads.apache.org/tomcat/tomcat-10/v10.0.8/bin/apache-tomcat-10.0.8.tar.gz" -P /opt/tomcat
-RUN tar xzvf /opt/tomcat/apache-tomcat-9*tar.gz -C /opt/tomcat --strip-components=1
+RUN tar xzvf /opt/tomcat/apache-tomcat-10*tar.gz -C /opt/tomcat --strip-components=1
 
 RUN apt -y install unzip
 RUN wget "http://download.eclipse.org/birt/downloads/drops/I-R1-4.9.0-201905231911/birt-runtime-4.9.0-20190523.zip" -P /opt/tomcat/webapps
